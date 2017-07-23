@@ -5,9 +5,7 @@ body {
   height: 200px;
   width: 200px;
   border-radius: 200px;
-  border: 8px solid #fff;
-  /* margin-left: auto;
-  margin-right: auto; */
+  border: 8px solid #fff;  
   position: absolute;
   top: 33.33%;
   left: 50%;
@@ -52,4 +50,56 @@ body {
   left: 50%;
   top: 50%;    
   transform-origin: 50% 0;
+}
+.clock-outline .clock-ticks {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: -1;
+}
+.clock-outline .clock-ticks .single-tick {
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  position: absolute;  
+  left: 50%;
+  top: 0;  
+  transform-origin: top;
+  border-top: 95px solid rgba(0, 0, 0, 1);
+}
+.clock-ticks .single-tick:nth-child(1) {
+  transform: translate(-4px, 0); 
+}
+.clock-ticks .single-tick:nth-child(2) {
+  transform: translate(-4px, 0) rotate(90deg);  
+}
+.clock-ticks .single-tick:nth-child(3) {
+  transform: translate(-4px, 0) rotate(-90deg); 
+}
+.clock-ticks .single-tick:nth-child(4) {
+  transform: translate(-4px, 0) rotate(180deg); 
+}
+.clock-ticks .single-tick:nth-child(5) {
+  transform: translate(-4px, 0) rotate(30deg); 
+}
+.clock-ticks .single-tick:nth-child(6) {
+  transform: translate(-4px, 0) rotate(60deg); 
+}
+.clock-ticks .single-tick:nth-child(7) {
+  transform: translate(-4px, 0) rotate(120deg); 
+}
+.clock-ticks .single-tick:nth-child(8) {
+  transform: translate(-4px, 0) rotate(150deg); 
+}
+.clock-ticks .single-tick:nth-child(9) {
+  transform: translate(-4px, 0) rotate(-150deg); 
+}
+.clock-ticks .single-tick:nth-child(10) {
+  transform: translate(-4px, 0) rotate(-120deg); 
+}
+.clock-ticks .single-tick:nth-child(11) {
+  transform: translate(-4px, 0) rotate(-60deg); 
+}
+.clock-ticks .single-tick:nth-child(12) {
+  transform: translate(-4px, 0) rotate(-30deg); 
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import './Clock.css'
+import _ from 'lodash'
 
 export class Clock extends React.Component {
   constructor (props) {
@@ -56,10 +57,14 @@ export class Clock extends React.Component {
   
   
   render () {
-    const {position: {positionH, positionM, positionS}} = this.state    
+    const {position: {positionH, positionM, positionS}} = this.state   
+    const ticks = _.map(_.fill(new Array(12), 1), (el, idx) => <div className='single-tick' key={idx}></div>)          
     return (      
       <div className='clock-outline'>
         <div className='clock-center'></div>
+        <div className='clock-ticks'>
+          {ticks}
+        </div>                
         <div className='clock-hour-pointer' style={{          
           transform: `translate(-2px, 0) rotate(${positionH}deg) `
         }} ></div>
