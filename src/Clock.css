@@ -65,7 +65,7 @@ body {
   left: 50%;
   top: 0;  
   transform-origin: top;
-  border-top: 95px solid rgba(0, 0, 0, 1);
+  border-top: 95px dashed rgba(0, 0, 0, 1);
 }
 .clock-ticks .single-tick:nth-child(1) {
   transform: translate(-4px, 0); 
