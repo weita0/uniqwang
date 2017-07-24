@@ -150,6 +150,33 @@ module.exports = {
           name: 'static/media/[name].[hash:8].[ext]',
         },
       },
+      {
+        test: /\.scss$/,
+        use: [{
+          loader: 'style-loader'  // creates style nodes from JS strings
+        }, {
+          loader: 'css-loader'  // translates CSS into CommonJS
+        }, {
+          loader: 'sass-loader',  // compiles Sass to CSS
+          options: {
+            // Necessary for external CSS imports to work
+            // https://github.com/facebookincubator/create-react-app/issues/2677
+            ident: 'postcss',
+            plugins: () => [
+              require('postcss-flexbugs-fixes'),
+              autoprefixer({
+                browsers: [
+                  '>1%',
+                  'last 4 versions',
+                  'Firefox ESR',
+                  'not ie < 9', // React doesn't support IE8 anyway
+                ],
+                flexbox: 'no-2009',
+              }),
+            ],
+          },
+        }]
+      },
       // "url" loader works like "file" loader except that it embeds assets
       // smaller than specified limit in bytes as data URLs to avoid requests.
       // A missing `test` is equivalent to a match.

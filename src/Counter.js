@@ -28,12 +28,12 @@ export class Counter extends React.Component {
     const {...past} = this.state
     return (
       <div className='counter'>
-        {'已经来到世上'}
+        {'来到世上已经'}
         <div className='box'>
-          <div className='cell'>{`${past.days}天`}</div>
-          <div className='cell'>{`${past.hours}小时`}</div>
-          <div className='cell'>{`${past.minutes}分钟`}</div>
-          <div className='cell'>{`${past.seconds}秒`}</div>
+          <div className='cell'>{`${past.days.toLocaleString()}天`}</div>
+          <div className='cell'>{`${past.hours.toLocaleString()}小时`}</div>
+          <div className='cell'>{`${past.minutes.toLocaleString()}分钟`}</div>
+          <div className='cell'>{`${past.seconds.toLocaleString()}秒`}</div>
         </div>
       </div>
     )
