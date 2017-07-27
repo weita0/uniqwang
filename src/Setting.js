@@ -1,36 +1,35 @@
 import React from 'react'
-import Dialog from 'react-toolbox/lib/dialog/Dialog'
+import DatePicker from 'material-ui/DatePicker'
+import Dialog from 'material-ui/Dialog'
+import FlatButton from 'material-ui/FlatButton'
 
 export class Setting extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      active: props.active
-    }
-  }
-  handleToggle () {
-    this.setState({
-      active: !this.state.active
-    })
-  }
+  // constructor (props) {
+  //   super(props)    
+  // }
+  
   render () {
-    const { handleDateChange } = this.props
-    return (
-      <div style={{display: this.state.active ? 'block' : 'none'}}>
-        <Dialog
-          actions={[{
-            label: 'Save', onClick: handleDateChange
-          }, {
-            label: 'Cancel', onClick: this.handleToggle
-          }]}
-          active={this.state.active}
-          onEscKeyDown={this.handleToggle}
-          onOverlayClick={this.handleToggle}
-          title='设置出生日'
-        >
-          
-        </Dialog>
-      </div>
+    const { active, toggleActive, handleDateChange, currentDate } = this.props   
+    const actions = [
+      <FlatButton 
+        label='Close'
+        primary
+        onClick={toggleActive}
+      />      
+    ]
+    return (      
+      <Dialog
+        actions={actions}
+        open={active}
+        modal={true} 
+        title='设置你的出生日'
+      >
+        <DatePicker 
+          defaultDate={new Date(currentDate)} 
+          onChange={handleDateChange}
+          autoOk={true}
+        />
+      </Dialog>      
     )
   }
 }

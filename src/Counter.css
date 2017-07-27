@@ -11,6 +11,7 @@
   margin-right: auto; 
   max-width: 160px;
   text-align: left;
+  margin-top: 4px;
 }
 .counter .box .cell {
   text-align: right;
@@ -24,4 +25,13 @@
   border-top: 1px solid #fff; 
   padding-top: 4px;
   margin-top: 4px;
+}
+.counter .birth-info {
+  max-width: 160px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+.counter .birth-info span:hover {
+  cursor: pointer;
 }
