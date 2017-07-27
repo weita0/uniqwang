@@ -1,5 +1,5 @@
 .counter {
-  font-family: STFangsong;
+  font-family: "STFangsong", "Fangsong";
   color: #fff;
   position: absolute;
   top: 60%;
@@ -22,6 +22,6 @@
 }
 .counter .box .cell:nth-child(1) {
   border-top: 1px solid #fff; 
-  padding-top: 2px;
-  margin-top: 2px;
+  padding-top: 4px;
+  margin-top: 4px;
 }

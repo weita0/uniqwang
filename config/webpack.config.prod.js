@@ -9,7 +9,7 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const eslintFormatter = require('react-dev-utils/eslintFormatter');
-const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
+// const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
 
@@ -99,7 +99,7 @@ module.exports = {
       // To fix this, we prevent you from importing files out of src/ -- if you'd like to,
       // please link the files into your node_modules/ and let module-resolution kick in.
       // Make sure your source files are compiled, as they will not be processed in any way.
-      new ModuleScopePlugin(paths.appSrc),
+      // new ModuleScopePlugin(paths.appSrc),
     ],
   },
   module: {
@@ -181,6 +181,16 @@ module.exports = {
       // tags. If you use code splitting, however, any async bundles will still
       // use the "style" loader inside the async code so CSS from them won't be
       // in the main CSS file.
+      {
+        test: /\.scss$/,
+        use: [{
+          loader: 'style-loader'  // creates style nodes from JS strings
+        }, {
+          loader: 'css-loader'  // translates CSS into CommonJS
+        }, {
+          loader: 'sass-loader',  // compiles Sass to CSS          
+        }]
+      },
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract(
