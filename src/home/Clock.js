@@ -1,5 +1,5 @@
 import React from 'react'
-import './Clock.css'
+import './Clock.scss'
 import _ from 'lodash'
 
 export class Clock extends React.Component {
@@ -14,8 +14,6 @@ export class Clock extends React.Component {
       }
     }
   }
-
-
   
   componentDidMount () {
     setInterval(() => {

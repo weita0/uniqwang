@@ -1,6 +1,7 @@
 import React from 'react'
 import { Clock } from './Clock' 
 import { Counter } from './Counter'
+import { CountDown } from './CountDown' 
 import './App.css'
 
 export default class Home extends React.Component {
@@ -8,7 +9,8 @@ export default class Home extends React.Component {
     return (
       <div className="App">
         <Clock />       
-        <Counter />        
+        <Counter />
+        <CountDown />
       </div>      
     )
   }

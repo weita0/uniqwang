@@ -1,6 +1,7 @@
-body {
-  background-color: #000;
-}
+$clock-tick-height: 5px;
+$clock-tick-width: $clock-tick-height;
+$clock-tick-translate: 96px;
+
 .clock-outline {
   height: 200px;
   width: 200px;
@@ -58,8 +59,8 @@ body {
   z-index: -1;
 }
 .clock-outline .clock-ticks .single-tick {
-  width: 8px;
-  height: 8px;
+  width: $clock-tick-width;
+  height: $clock-tick-height;
   background-color: #fff;
   position: absolute;  
   left: 50%;
@@ -68,38 +69,38 @@ body {
   border-radius: 2px;
 }
 .clock-ticks .single-tick:nth-child(1) {
-  transform: translate(-4px, 95px); 
+  transform: translate(-4px, $clock-tick-translate); 
 }
 .clock-ticks .single-tick:nth-child(2) {
-  transform: translateX(-4px) rotate(90deg) translateY(95px);  
+  transform: translateX(-4px) rotate(90deg) translateY($clock-tick-translate);  
 }
 .clock-ticks .single-tick:nth-child(3) {
-  transform: translateX(-4px) rotate(-90deg) translateY(95px); 
+  transform: translateX(-4px) rotate(-90deg) translateY($clock-tick-translate); 
 }
 .clock-ticks .single-tick:nth-child(4) {
-  transform: translateX(-4px) rotate(180deg) translateY(95px); 
+  transform: translateX(-4px) rotate(180deg) translateY($clock-tick-translate); 
 }
 .clock-ticks .single-tick:nth-child(5) {
-  transform: translateX(-4px) rotate(30deg) translateY(95px); 
+  transform: translateX(-4px) rotate(30deg) translateY($clock-tick-translate); 
 }
 .clock-ticks .single-tick:nth-child(6) {
-  transform: translateX(-4px) rotate(60deg) translateY(95px); 
+  transform: translateX(-4px) rotate(60deg) translateY($clock-tick-translate); 
 }
 .clock-ticks .single-tick:nth-child(7) {
-  transform: translateX(-4px) rotate(120deg) translateY(95px); 
+  transform: translateX(-4px) rotate(120deg) translateY($clock-tick-translate); 
 }
 .clock-ticks .single-tick:nth-child(8) {
-  transform: translateX(-4px) rotate(150deg) translateY(95px); 
+  transform: translateX(-4px) rotate(150deg) translateY($clock-tick-translate); 
 }
 .clock-ticks .single-tick:nth-child(9) {
-  transform: translateX(-4px) rotate(-150deg) translateY(95px); 
+  transform: translateX(-4px) rotate(-150deg) translateY($clock-tick-translate); 
 }
 .clock-ticks .single-tick:nth-child(10) {
-  transform: translateX(-4px) rotate(-120deg) translateY(95px); 
+  transform: translateX(-4px) rotate(-120deg) translateY($clock-tick-translate); 
 }
 .clock-ticks .single-tick:nth-child(11) {
-  transform: translateX(-4px) rotate(-60deg) translateY(95px); 
+  transform: translateX(-4px) rotate(-60deg) translateY($clock-tick-translate); 
 }
 .clock-ticks .single-tick:nth-child(12) {
-  transform: translateX(-4px) rotate(-30deg) translateY(95px); 
+  transform: translateX(-4px) rotate(-30deg) translateY($clock-tick-translate); 
 }
