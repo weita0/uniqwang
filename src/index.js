@@ -5,6 +5,7 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { BrowserRouter } from 'react-router-dom'
 
 const AppWrapper = () => (
   <MuiThemeProvider>
@@ -12,6 +13,10 @@ const AppWrapper = () => (
   </MuiThemeProvider>
 )
 
-ReactDOM.render(<AppWrapper />, document.getElementById('root'));
+ReactDOM.render((
+  <BrowserRouter>
+    <AppWrapper />
+  </BrowserRouter>
+), document.getElementById('root'));
 registerServiceWorker();
 injectTapEventPlugin();

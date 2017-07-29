@@ -140,6 +140,7 @@ module.exports = {
           /\.html$/,
           /\.(js|jsx)$/,
           /\.css$/,
+          /\.scss$/,
           /\.json$/,
           /\.bmp$/,
           /\.gif$/,
@@ -151,17 +152,7 @@ module.exports = {
         options: {
           name: 'static/media/[name].[hash:8].[ext]',
         },
-      },
-      {
-        test: /\.scss$/,
-        use: [{
-          loader: 'style-loader'  // creates style nodes from JS strings
-        }, {
-          loader: 'css-loader'  // translates CSS into CommonJS
-        }, {
-          loader: 'sass-loader',  // compiles Sass to CSS          
-        }]
-      },
+      },      
       // "url" loader works like "file" loader except that it embeds assets
       // smaller than specified limit in bytes as data URLs to avoid requests.
       // A missing `test` is equivalent to a match.
@@ -192,6 +183,16 @@ module.exports = {
       // In production, we use a plugin to extract that CSS to a file, but
       // in development "style" loader enables hot editing of CSS.
       {
+        test: /\.scss$/,
+        use: [{
+          loader: 'style-loader'  // creates style nodes from JS strings
+        }, {
+          loader: 'css-loader'  // translates CSS into CommonJS
+        }, {
+          loader: 'sass-loader',  // compiles Sass to CSS          
+        }]
+      },
+      {
         test: /\.css$/,
         use: [
           require.resolve('style-loader'),
@@ -203,7 +204,7 @@ module.exports = {
               // sourceMap: true,
               // localIdentName: "[name]--[local]--[hash:base64:8]"
             },
-          },
+          },                              
           {
             loader: require.resolve('postcss-loader'),
             options: {
@@ -223,7 +224,7 @@ module.exports = {
                 }),
               ],
             },
-          },
+          }
         ],
       },
       // ** STOP ** Are you adding a new loader?

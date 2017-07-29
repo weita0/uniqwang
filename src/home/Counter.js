@@ -2,7 +2,6 @@ import React from 'react'
 import moment from 'moment'
 import './Counter.css'
 import { Setting } from './Setting'
-const iconSetting = require('./img/settings.svg')
 
 export class Counter extends React.Component {
   constructor (props) {
@@ -18,6 +17,7 @@ export class Counter extends React.Component {
   count () {
     let now = moment()
     return {
+      years: now.diff(this.state.birth, 'years', true),
       days: now.diff(this.state.birth, 'days'),
       hours: now.diff(this.state.birth, 'hours'),
       minutes: now.diff(this.state.birth, 'minutes'),
@@ -47,21 +47,21 @@ export class Counter extends React.Component {
       <div className='counter'>
         <div className='birth-info'>
           {'生于'}
-          <span onClick={this.toggleSetting.bind(this)}>{this.state.birth.format('YYYY年MM月DD日')}，</span>
+          <span onClick={this.toggleSetting.bind(this)}>{this.state.birth.format('YYYY年MM月DD日')}</span>
         </div>
         <div className='box'>
           {'来到世上已经:'}
+          <div className='cell'><span>{`${past.years.toFixed(1)}`}</span>年</div>
           <div className='cell'><span>{`${past.days.toLocaleString()}`}</span>天</div>
           <div className='cell'><span>{`${past.hours.toLocaleString()}`}</span>小时</div>
           <div className='cell'><span>{`${past.minutes.toLocaleString()}`}</span>分钟</div>
           <div className='cell'><span>{`${past.seconds.toLocaleString()}`}</span>秒</div>
-        </div>
-        {/*<div><a onClick={this.toggleSetting.bind(this)}><img src={iconSetting} alt='setting' style={{width: 15, height: 15}}/></a></div>*/}
+        </div>        
         <Setting 
           active={this.state.settingActive} 
           toggleActive={this.toggleSetting.bind(this)} 
           handleDateChange={this.handleDateChange.bind(this)} 
-          currentDate={this.state.birth} 
+          currentDate={this.state.birth}
         />
       </div> :
       <div style={{textAlign: 'center', color: '#fff'}}>fuck</div>

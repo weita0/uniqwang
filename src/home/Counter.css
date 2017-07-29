@@ -18,8 +18,9 @@
   margin-bottom: 1px;
 }
 .counter .box .cell span {
-  color: #ff0000; 
+  color: #F44336; 
   float: left;
+  letter-spacing: .8px;
 }
 .counter .box .cell:nth-child(1) {
   border-top: 1px solid #fff; 
@@ -34,4 +35,7 @@
 }
 .counter .birth-info span:hover {
   cursor: pointer;
+}
+.counter .birth-info span {  
+  font-style: italic;
 }

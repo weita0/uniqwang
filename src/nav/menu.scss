@@ -1,0 +1,63 @@
+$menu-bar-width: 18px; 
+$menu-bar-height: 2px; 
+$menu-bar-color: #fff;
+$menu-bar-internal: 4px;
+
+.menu-wrapper {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  height: 50%;
+  .menu-controler {
+    position: relative;
+    top: 5px;
+    right: 5px;
+    display: block;
+    float: right;
+    input[type='checkbox'] {
+      display: none;
+    }
+    input[type='checkbox']:checked + .menu-bar {
+      border-bottom: $menu-bar-height solid transparent;
+    }
+    input[type='checkbox']:checked + .menu-bar:before {
+      transform: translateY(3px) rotate(225deg);      
+    }
+    input[type='checkbox']:checked + .menu-bar:after {
+      transform: translateY(-3px) + rotate(-225deg);      
+    }
+    .menu-bar {
+      width: $menu-bar-width;              
+      border-bottom: $menu-bar-height solid $menu-bar-color;
+      transition: border-bottom 0.5s ease-in-out;      
+    }
+    .menu-bar:before {
+      content: '';
+      width: $menu-bar-width;        
+      display: block; 
+      border-bottom: $menu-bar-height solid $menu-bar-color;
+      margin-bottom: $menu-bar-internal;
+      transition: transform 0.5s ease-in-out; 
+    }
+    .menu-bar:after {
+      content: '';
+      width: $menu-bar-width;    
+      display: block;
+      border-bottom: $menu-bar-height solid $menu-bar-color;
+      margin-bottom: $menu-bar-internal;
+      transition: transform 0.5s ease-in-out; 
+    }
+  }
+  ul {
+    li a {
+      color: #fff;
+      text-decoration: none;
+      font-family: "STFangsong", "Fangsong";
+      font-size: 10px;
+      opacity: 0.8;
+    }
+    position: relative;
+    list-style: none;    
+    text-align: left;
+  }
+}
