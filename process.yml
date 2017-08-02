@@ -1,4 +1,0 @@
-apps:
-  - script: scripts/start.js
-    instances: 4
-    watch: true

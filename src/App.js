@@ -7,11 +7,11 @@ import Collection from './collect'
 class App extends Component {
   render() {
     return (
-      <Router>        
-        <div>
+      <Router>
+        <div>                
           <Route exact path='/' component={Home} />
           <Route path='/collection' component={Collection} />
-          <Nav />
+          <Nav />        
         </div>
       </Router>
     )

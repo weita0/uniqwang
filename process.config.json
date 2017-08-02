@@ -1,0 +1,14 @@
+{
+  "apps": [{
+    "name": "main",
+    "script": "scripts/start.js",
+    "watch": true,
+    "instance": "max",
+    "env": {
+      "NODE_ENV": "development"
+    },
+    "env_production": {
+      "NODE_ENV": "production"
+    }
+  }]
+}
