@@ -1,6 +1,7 @@
 import React from 'react'
 import './Clock.scss'
 import _ from 'lodash'
+import * as helper from '../helper'
 
 export class Clock extends React.Component {
   constructor (props) {
@@ -16,9 +17,10 @@ export class Clock extends React.Component {
   }
   
   componentDidMount () {
-    setInterval(() => {
-      this.refreshState()
-    }, 1000)
+    // counter = setInterval(() => {
+    //   this.refreshState()
+    // }, 1000)    
+    this.id = helper.createInterval(this.refreshState.bind(this), 1000)    
   }
   getTime () {
     // let now = new Date(2017, 6, 22, 2, 0, 45)
@@ -40,7 +42,7 @@ export class Clock extends React.Component {
       positionH
     }
   }
-  refreshState () {
+  refreshState () {    
     let time = this.getTime()
     let position = this.getPosition(time)
     this.setState({
@@ -51,6 +53,11 @@ export class Clock extends React.Component {
         ...position
       }
     })
+  }
+
+  componentWillUnmount () {
+    console.log(this.id)
+    helper.clearSingleLoop(this.id)
   }
   
   

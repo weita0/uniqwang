@@ -3,3 +3,19 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.footer {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 4px 0;
+  color: #fff;
+  font-size: 14px;
+}
+
+.footer img {
+  width: 18px;
+  height: 18px;
+  margin: 0 8px;
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card, CardTitle, CardMedia, CardText} from 'material-ui/Card'
+import {Card, CardTitle, CardMedia} from 'material-ui/Card'
 
 export class List extends React.Component {
   render () {

@@ -2,6 +2,7 @@ import React from 'react'
 import moment from 'moment'
 import './Counter.css'
 import { Setting } from './Setting'
+import * as helper from '../helper'
 
 export class Counter extends React.Component {
   constructor (props) {
@@ -36,11 +37,15 @@ export class Counter extends React.Component {
       settingActive: false
     })
   }
-  componentDidMount () {
-    setInterval(() => {
-      this.setState(this.count())
-    }, 1000)
+  componentDidMount () {    
+    this.id = helper.createInterval(this.refresh.bind(this), 1000)
   }  
+  refresh () {
+    this.setState(this.count())
+  }
+  componentWillUnmount () {
+    helper.clearSingleLoop(this.id)
+  }
   render () {
     const {...past} = this.state  
     return past.days && past.hours && past.seconds ? 
